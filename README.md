@@ -1,6 +1,3 @@
-# ALU Shell Tasks
-This repository contains basic shell scripting tasks for learning bash.
-
 ## Shell Permissions Scripts
 This project contains scripts that perform various operations related to file and directory permissions in Linux.
 
