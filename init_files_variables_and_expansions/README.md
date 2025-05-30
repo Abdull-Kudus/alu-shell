@@ -14,8 +14,8 @@
 10. Love exponent breath: Uses ** for exponentiation in arithmetic expansion…4^3 = 64
 11. Binary to decimal: 2# prefix tells bash to interpret the number as base 2. It converts binary to decimal
 12. Combinations: Brace expansion {a..z}{a..z} generates all combinations. tr ' ' '\n' converts spaces to newlines while grep -v oo excludes "oo"
-13. Print float: printf "%.2f\n" formats number with 2 decimal places
-14. Decimal to hexadecimal: printf "%x\n" converts decimal to lowercase hexadecimal
+13. Print float (13-print_float): printf "%.2f\n" "$NUM" formats the number with exactly 2 decimal places, %.2f is the format specifier: %f = floating point number, .2 = exactly 2 decimal places, \n = newline character, Quotes around "$NUM" handle cases where NUM might be empty or contain spaces, Format specifiers control output precision
+14. Decimal to hexadecimal (14-decimal_to_hexadecimal): printf "%x\n" "$DECIMAL" converts decimal to lowercase hexadecimal, %x format specifier converts to hexadecimal (lowercase)
 15. ROT13: tr command performs character translation which maps A-Z to N-Z,A-M and a-z to n-z,a-m (13-character shift)
 16. Odd lines: paste - - pairs consecutive lines and cut -f1 extracts first field (odd-numbered lines)
 17. Water and stir: Complex base conversion problem, converts WATER from base "water" (5-character base) to decimal, converts STIR from base "stir." (5-character base) to decimal, adds them together and converts result to base "bestchol" (8-character base) using octal as intermediate
