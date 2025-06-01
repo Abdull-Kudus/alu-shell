@@ -1,3 +1,13 @@
 #!/usr/bin/env bash
-# Loop from 1 to 10, special outputs on 4 and 8 using if, elif, else
-i=1; while [ "$i" -le 10 ]; do [ "$i" -eq 4 ] && echo "bad luck" || ([ "$i" -eq 8 ] && echo "good luck" || echo "Best School"); i=$((i + 1)); done
+# This script loops from 1 to 10 with specific messages on 4th and 8th iterations
+i=1
+while [ "$i" -le 10 ]; do
+	if [ "$i" -eq 4 ]; then
+		echo "bad luck"
+	elif [ "$i" -eq 8 ]; then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	i=$((i + 1))
+done
