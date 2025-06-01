@@ -1,33 +1,7 @@
 #!/usr/bin/env bash
-# This script manages the manage_my_process daemon using start|stop|restart commands
+# A simple script that writes "I am alive!" to /tmp/my_process every 2 seconds
 
-PID_FILE="/var/run/my_process.pid"
-SCRIPT="./manage_my_process"
-
-case "$1" in
-    start)
-        "$SCRIPT" &
-        echo $! > "$PID_FILE"
-        echo "manage_my_process started"
-        ;;
-    stop)
-        if [ -f "$PID_FILE" ]; then
-            kill "$(cat "$PID_FILE")"
-            rm -f "$PID_FILE"
-            echo "manage_my_process stopped"
-        fi
-        ;;
-    restart)
-        if [ -f "$PID_FILE" ]; then
-            kill "$(cat "$PID_FILE")"
-            rm -f "$PID_FILE"
-        fi
-        "$SCRIPT" &
-        echo $! > "$PID_FILE"
-        echo "manage_my_process restarted"
-        ;;
-    *)
-        echo "Usage: manage_my_process {start|stop|restart}"
-        exit 1
-        ;;
-esac
+while true; do
+	  echo "I am alive!" >> /tmp/my_process
+	    sleep 2
+    done
