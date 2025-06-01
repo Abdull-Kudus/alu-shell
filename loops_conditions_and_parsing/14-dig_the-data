@@ -1,5 +1,7 @@
-#!/bin/bash
-# Extract IP and HTTP status code, count occurrences, and sort by frequency
+#!/usr/bin/env bash
+# Extract IP and HTTP status code, group and count occurrences, then sort by most frequent
 
-sed -E 's/^([0-9\.]+).*" ([0-9]{3}) .*/\1 \2/' apache-access.log | \
-sort | uniq -c | sort -nr
+cut -d' ' -f1,9 < apache-access.log | sort | uniq -c | sort -nr | while read -r count ip code; do
+  printf "%6d %s %s\n" "$count" "$ip" "$code"
+done
+
