@@ -1,5 +1,5 @@
-#!/bin/bash
-# File: 12-tell_the_story_of_passwd
+#!/usr/bin/env bash
+# This is file: 12-tell_the_story_of_passwd
 
 while IFS=':' read -r username password userid groupid info homedir shell
 do
