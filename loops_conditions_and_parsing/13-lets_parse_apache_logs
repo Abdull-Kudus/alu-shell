@@ -1,13 +1,4 @@
 #!/usr/bin/env bash
-# This script parses the Apache access logs and extracts the visitor IP and HTTP status code.
+# Displays visitor IP and HTTP status code from Apache log
 
-# Read each line of the log file
-while read -r line; do
-	    # Extract the IP (first field) and HTTP status code (ninth field) using sed and space delimiters
-	        ip=$(echo "$line" | sed -E 's/^([0-9\.]+).*/\1/')
-		    status_code=$(echo "$line" | sed -E 's/.*" [0-9]{3} ([0-9]{3}) .*/\1/')
-		        
-		        # Output the IP and HTTP status code
-			    echo "$ip $status_code"
-		    done < /path/to/apache-access.log
-
+awk '{print $1, $9}' apache-access.log

@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Extract IP and HTTP status code, group and count occurrences, then sort by most frequent
+# Groups visitors by IP and HTTP status code and sorts by occurrence
 
-cut -d' ' -f1,9 < apache-access.log | sort | uniq -c | sort -nr | while read -r count ip code; do
-  printf "%6d %s %s\n" "$count" "$ip" "$code"
-done
-
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr
