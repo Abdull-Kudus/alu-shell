@@ -1,0 +1,6 @@
+#!/bin/bash
+# Extract IP and HTTP status code
+
+sed -E 's/^([0-9\.]+).*" [0-9]{3} .*/\1/' apache-access.log | \
+paste -d' ' - <(grep -oE '" [0-9]{3} ' apache-access.log | tr -d '" ') 
+

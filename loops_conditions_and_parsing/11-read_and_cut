@@ -1,0 +1,7 @@
+#!/bin/bash
+# File: 11-read_and_cut
+
+while IFS=':' read -r username password userid groupid desc homedir shell
+do
+  echo "$username:$userid:$homedir"
+done < /etc/passwd

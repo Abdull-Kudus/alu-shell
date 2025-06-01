@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Lists all non-hidden files/directories and removes part before first dash (-)
+
+for file in *; do
+  echo "${file#*-}"
+done

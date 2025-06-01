@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Displays "Best Schoo" 10 times, and "Hi" after the 9th using while loop and if
+i=1; while [ "$i" -le 10 ]; do echo "Best School"; [ "$i" -eq 9 ] && echo "Hi"; i=$((i + 1)); done
