@@ -1,7 +1,6 @@
-#!/bin/bash
-# File: 11-read_and_cut
+#!/usr/bin/env bash
+# This script displays the username, user id, and home directory from /etc/passwd
 
-while IFS=':' read -r username password userid groupid desc homedir shell
-do
-  echo "$username:$userid:$homedir"
-done < /etc/passwd
+while IFS=: read -r username _ userid _ _ home_dir _; do
+	  echo "$username:$userid:$home_dir"
+  done < /etc/passwd
