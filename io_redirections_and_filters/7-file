@@ -1,6 +1,2 @@
 #!/bin/bash
-<<<<<<< HEAD
-echo "Best School" > '\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)' 
-=======
-echo "Best School" > '\*\\'"'"'"Best School"'"'"'\'\\*$\?\*\*\*\*\*:
->>>>>>> Include modified and deleted files
+echo "Best School" > "\*\\\\\"Best School\"\\\\*\$\\?*****:)"
